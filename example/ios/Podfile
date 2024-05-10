@@ -39,5 +39,5 @@ target 'ContextSdkExample' do
   end
 end
 
-
+# For Local Development
 pod 'ContextSDK', :path => '../../../contextsdk/ContextSDK/', :testspecs => ['Tests'] 

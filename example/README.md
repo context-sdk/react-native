@@ -22,6 +22,13 @@ yarn start
 
 Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _iOS_ app:
 
+You need to install the pods
+
+```
+cd ios
+USE_FRAMEWORKS=dynamic pod update
+```
+
 ### For iOS
 
 ```bash

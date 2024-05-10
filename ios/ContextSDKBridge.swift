@@ -22,7 +22,7 @@ class ContextSDKBridge: NSObject {
             } else if let boolValue = value as? Bool { // TODO: Bools fall into the Int clause - we should fix this
                 contextSDK_setGlobalCustomSignalBool(idC: stringKey, value: boolValue)
             } else if value is NSNull {
-                contextSDK_setGlobalCustomSignalString(idC: stringKey, valueC: nil)
+                ContextManager.setGlobalCustomSignal(id: stringKey, value: nil)
             }
         }
         resolve(true)

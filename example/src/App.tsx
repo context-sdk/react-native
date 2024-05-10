@@ -71,6 +71,7 @@ export default function App() {
           setValidateOutput(undefined);
           calibrate({
             flowName: 'test_flow_calibrate',
+            maxDelay: 0,
             // This may take up to 3 seconds to be called.
             onContextReady: async (context) => {
               setShouldUpsell(await context.shouldUpsell());

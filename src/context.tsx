@@ -36,7 +36,7 @@ export class Context {
 
   shouldUpsell = async () => {
     if (Platform.OS === 'ios') {
-      return ContextSDKBridge.context_shouldUpsell(this.contextId);
+      return ContextSDKBridge.context_shouldUpsell(this.contextId) as boolean;
     } else {
       return true;
     }
@@ -44,7 +44,7 @@ export class Context {
 
   validate = async () => {
     if (Platform.OS === 'ios') {
-      return ContextSDKBridge.context_validate(this.contextId);
+      return ContextSDKBridge.context_validate(this.contextId) as string;
     } else {
       return 'This is only supported on iOS platforms.';
     }
@@ -79,7 +79,7 @@ export enum Outcome {
   /// Optional outcome: The user ended up successfully purchasing the product (all the way through the payment flow)
   positiveConverted = 3,
 
-  /// Optional outcome: The user has tapped on the banner, and started the purchase flow, or read more about the offer
+  /**  Optional outcome: The user has tapped on the banner, and started the purchase flow, or read more about the offer */
   positiveInteracted = 2,
 
   //---------------------------------------------------------------------------------------------------------
