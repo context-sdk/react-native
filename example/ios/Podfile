@@ -8,11 +8,7 @@ require Pod::Executable.execute_command('node', ['-p',
 platform :ios, '14.0'
 prepare_react_native_project!
 
-linkage = ENV['USE_FRAMEWORKS']
-if linkage != nil
-  Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
-  use_frameworks! :linkage => linkage.to_sym
-end
+use_frameworks!
 
 target 'ContextSdkExample' do
   config = use_native_modules!
@@ -40,4 +36,4 @@ target 'ContextSdkExample' do
 end
 
 # For Local Development
-pod 'ContextSDK', :path => '../../../contextsdk/ContextSDK/', :testspecs => ['Tests'] 
+pod 'ContextSDK', :path => '../../../context-sdk/ContextSDK/', :testspecs => ['Tests'] 

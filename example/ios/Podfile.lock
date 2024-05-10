@@ -1197,8 +1197,8 @@ PODS:
 
 DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
-  - ContextSDK (from `../../../contextsdk/ContextSDK/`)
-  - ContextSDK/Tests (from `../../../contextsdk/ContextSDK/`)
+  - ContextSDK (from `../../../context-sdk/ContextSDK/`)
+  - ContextSDK/Tests (from `../../../context-sdk/ContextSDK/`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - fmt (from `../node_modules/react-native/third-party-podspecs/fmt.podspec`)
@@ -1266,7 +1266,7 @@ EXTERNAL SOURCES:
   boost:
     :podspec: "../node_modules/react-native/third-party-podspecs/boost.podspec"
   ContextSDK:
-    :path: "../../../contextsdk/ContextSDK/"
+    :path: "../../../context-sdk/ContextSDK/"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   FBLazyVector:
@@ -1379,7 +1379,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: d3f49c53809116a5d38da093a8aa78bf551aed09
-  ContextSDK: 7171350c12e37307106121a6c23df12cf910ffdb
+  ContextSDK: 71a4c461d281e5b081541ced124a87beb92b451f
   DoubleConversion: 76ab83afb40bddeeee456813d9c04f67f78771b5
   FBLazyVector: 898d14d17bf19e2435cafd9ea2a1033efe445709
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
@@ -1411,7 +1411,7 @@ SPEC CHECKSUMS:
   React-jsitracing: 3de522f8f794dccd3c54af9160dc992ee65bd494
   React-logger: 7e7403a2b14c97f847d90763af76b84b152b6fce
   React-Mapbuffer: c5844bf3c2206f5475c0fc2340a89b049ea23c97
-  react-native-context-sdk: 5b92c3b21570aae901d1936d99d5d30ddeeadb50
+  react-native-context-sdk: fce43a54023aab01b49a1fdc9be153c3fa42315a
   React-nativeconfig: 21d89c65ca39875fad2c5c465e0e013e514eba21
   React-NativeModulesApple: e2e180dae4486b2978fcf3564cc4c8de4b453a68
   React-perflogger: 3d31e0d1e8ad891e43a09ac70b7b17a79773003a
@@ -1438,6 +1438,6 @@ SPEC CHECKSUMS:
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   Yoga: dafebc41bc66910af33077aaa41078e89fd635bf
 
-PODFILE CHECKSUM: 634382a8c7a1f97d27aefc03b2a60acbae4accc7
+PODFILE CHECKSUM: ab9aac887fb016d1e0c98256986faeab8a0a28b4
 
 COCOAPODS: 1.15.2

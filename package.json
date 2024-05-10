@@ -43,7 +43,6 @@
     "url": "git+https://github.com/context-sdk/react-native.git"
   },
   "author": "ContextSDK",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/context-sdk/react-native/issues"
   },
