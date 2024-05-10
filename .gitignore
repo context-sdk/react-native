@@ -1,3 +1,5 @@
+example/ios/xcode.env.local
+
 # OSX
 #
 .DS_Store
