@@ -1,6 +1,6 @@
 {
   "name": "react-native-context-sdk",
-  "version": "0.2.0",
+  "version": "4.2.0",
   "description": "ContextSDK for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -103,11 +103,6 @@
     },
     "github": {
       "release": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": "angular"
-      }
     }
   },
   "eslintConfig": {
