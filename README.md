@@ -52,7 +52,3 @@ This allows us to provide you insights into which events are most commonly trigg
 */
 trackEvent("custom_event");
 ```
-
-## License
-
-MIT
