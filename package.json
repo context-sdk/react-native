@@ -103,7 +103,8 @@
     },
     "github": {
       "release": true
-    }
+    },
+    "pkgFiles": null
   },
   "eslintConfig": {
     "root": true,
