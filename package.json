@@ -95,7 +95,6 @@
   },
   "release-it": {
     "git": {
-      "commitMessage": "chore: release ${version}",
       "tagName": "v${version}"
     },
     "npm": {
@@ -103,8 +102,7 @@
     },
     "github": {
       "release": true
-    },
-    "pkgFiles": null
+    }
   },
   "eslintConfig": {
     "root": true,
