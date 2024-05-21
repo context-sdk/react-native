@@ -7,23 +7,42 @@ ContextSDK for React Native
 - iOS - 14.0 and higher
 - Android - Coming Soon
 
+## Overview
+
+- **Step 1**: Add ContextSDK to your app
+- **Step 2**: (Optional) Log any events
+- **Step 3**: Ship an App Store update with ContextSDK
+
 ## Installation
 
-```sh
-npm install react-native-context-sdk
+**Step 1:** Choose your preferred package manager:
+
+```
+npm install react-native-context-sdk@latest
+```
+```
+yarn add react-native-context-sdk
 ```
 
-## Usage
+**Step 2:** Ensure minimum Deployment Target
 
-On your first screen, or somewhere that is always ran at app start setup ContextSDK.
+ContextSDK requires a minimum deployment target of iOS 14.0, be sure to update your `ios/Podfile` to specify 14.0 or higher:
+
+```ruby
+platform :ios, '14.0'
+```
+
+### Activating ContextSDK
+
+After you installed ContextSDK, you need to add your license key. [Register here](https://insights.contextsdk.com/register) to get started. Call this on app start.
 
 ```js
 import { setup } from 'react-native-context-sdk';
 
-// ...
-
-const licenseValid = await setup("YOUR_LICENSE_KEY_HERE");
+void setup("YOUR_LICENSE_KEY_HERE");
 ```
+
+## Optional: Track additional Events
 
 Optionally, you can log specific events to get a better understanding of how the real world context influences your app.
 
@@ -52,3 +71,7 @@ This allows us to provide you insights into which events are most commonly trigg
 */
 trackEvent("custom_event");
 ```
+
+## Go Live
+
+Now all that's left is to ship your update to the App Store to start gaining context insights. Continue to the [release page](https://docs.insights.contextsdk.com/release/) for a final check before shipping, as well as other deployment tips.
