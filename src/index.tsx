@@ -111,13 +111,16 @@ export function calibrate(options: {
 
 export function optimize(options: {
   flowName: string;
+  maxDelay?: number;
   /** Note: This callback might not be called if ContextSDK deems it to be a bad time to perform the flow. Will always be called while calibrating a flow. */
   onGoodMoment: (context: Context) => void;
   customSignals?: CustomSignals;
 }): void {
-  const { flowName, onGoodMoment, customSignals = {} } = options;
+  const { flowName, maxDelay, onGoodMoment, customSignals = {} } = options;
+  // Native Interop does not support nullable numbers, so we use a magic number to represent null.
+  let effectiveMaxDelay = maxDelay ?? -1000;
   if (Platform.OS === 'ios') {
-    ContextSDKBridge.optimize(flowName, customSignals).then(
+    ContextSDKBridge.optimize(flowName, effectiveMaxDelay, customSignals).then(
       (contextId: number) => {
         onGoodMoment(new Context(contextId));
       }

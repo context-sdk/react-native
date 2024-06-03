@@ -32,6 +32,7 @@ RCT_EXTERN_METHOD(calibrate:(NSString*)flowName
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
 RCT_EXTERN_METHOD(optimize:(NSString*)flowName
+                  maxDelay:(nonnull NSNumber*)maxDelay
                   customSignals:(NSDictionary*)customSignals
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)

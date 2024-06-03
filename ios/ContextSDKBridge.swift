@@ -60,10 +60,12 @@ class ContextSDKBridge: NSObject {
         }
     }
 
-    @objc(optimize:customSignals:withResolver:withRejecter:)
-    func optimize(flowName: String, customSignals: NSDictionary, resolve: @escaping RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
+    @objc(optimize:maxDelay:customSignals:withResolver:withRejecter:)
+    func optimize(flowName: String, maxDelay: NSNumber, customSignals: NSDictionary, resolve: @escaping RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
+        // Since we can't pass nullable ints across the boundary we treat any negative number as null.
+        let effectiveMaxDelay = maxDelay.intValue >= 0 ? maxDelay.intValue : nil;
         let customSignalsID = createCustomSignals(customSignals: customSignals)
-        contextSDK_optimize_rn(flowName: flowName, customSignalsID: customSignalsID) { contextID in
+        contextSDK_optimize_rn(flowName: flowName, maxDelay: effectiveMaxDelay, customSignalsID: customSignalsID) { contextID in
             resolve(contextID)
         }
     }
