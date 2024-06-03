@@ -115,6 +115,25 @@ export default function App() {
         }}
       />
       <Button
+        title="Optimize maxDelay:0"
+        onPress={async () => {
+          setShouldUpsell(undefined);
+          setValidateOutput(undefined);
+
+          // This block is only called if it is a good time. Otherwise the promise will never resolve.
+          optimize({
+            flowName: 'test_flow_optimize',
+            maxDelay: 0,
+            onGoodMoment: async (context) => {
+              setShouldUpsell(await context.shouldUpsell());
+              const output = await context.validate();
+              setValidateOutput(output);
+              context.log(Outcome.positive);
+            },
+          });
+        }}
+      />
+      <Button
         title="Instant Context"
         onPress={async () => {
           setShouldUpsell(undefined);
