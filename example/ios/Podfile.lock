@@ -1,6 +1,6 @@
 PODS:
   - boost (1.84.0)
-  - ContextSDK (4.5.0)
+  - ContextSDK (4.5.1)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.75.2)
   - fmt (9.1.0)
@@ -1238,8 +1238,8 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-context-sdk (4.5.0):
-    - ContextSDK (= 4.5.0)
+  - react-native-context-sdk (4.5.1):
+    - ContextSDK (= 4.5.1)
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1726,7 +1726,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: 4cb898d0bf20404aab1850c656dcea009429d6c1
-  ContextSDK: 4d2f383122366c0aa343c0a0c8e9106626cf9718
+  ContextSDK: 7057a6981a3f706ce8b874b397463c89f5c13e53
   DoubleConversion: 76ab83afb40bddeeee456813d9c04f67f78771b5
   FBLazyVector: 38bb611218305c3bc61803e287b8a81c6f63b619
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
@@ -1761,7 +1761,7 @@ SPEC CHECKSUMS:
   React-logger: 8db32983d75dc2ad54f278f344ccb9b256e694fc
   React-Mapbuffer: db173bede5ac5cb1c82d4a6a8597477ba87c5648
   React-microtasksnativemodule: 0c1d7b6f26fbeae097279569cf2430255fa3d3a9
-  react-native-context-sdk: 7682e165e14996cb56a9e086e2e00800b96ed441
+  react-native-context-sdk: 41b17b8cc803ad0a952ef7fb0a03d4b7beb21836
   React-nativeconfig: 5fc2b05a590eb704128f5a4fc8ea6fa7b847e6e8
   React-NativeModulesApple: 88313414ddffd1758f76042733e8f0297acfd502
   React-perflogger: 8a360ccf603de6ddbe9ff8f54383146d26e6c936
