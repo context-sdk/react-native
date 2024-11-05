@@ -1,5 +1,11 @@
 # react-native-context-sdk
 
+[![npm version](https://img.shields.io/npm/v/react-native-context-sdk)](https://www.npmjs.com/package/react-native-context-sdk)
+[![Changelog](https://img.shields.io/badge/changelog-latest-blue)](https://docs.decision.contextsdk.com/changelog/)
+[![Documentation](https://img.shields.io/badge/documentation-latest-blue)](https://docs.decision.contextsdk.com/)
+[![Issues](https://img.shields.io/github/issues/context-sdk/react-native)](https://github.com/context-sdk/react-native/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/context-sdk/react-native)](https://github.com/context-sdk/react-native/pulls)
+
 ContextSDK for React Native
 
 ## Supported Platforms
@@ -8,6 +14,8 @@ ContextSDK for React Native
 - Android - Coming Soon
 
 ## Overview
+
+Follow these steps to add ContextSDK to your app, and refer to the [official documentation](https://docs.decision.contextsdk.com/) for additional details and advanced configuration.
 
 - **Step 1**: Add ContextSDK to your app
 - **Step 2**: (Optional) Log any events
@@ -54,19 +62,19 @@ import {
 } from 'react-native-context-sdk';
 
 /*
-Use this to track users navigating through different screen in your app. 
+Use this to track users navigating through different screen in your app.
 It allow us to provide you insights into which screen is most commonly used in which real world context.
 */
 trackPageView("page_identifier");
 
 /*
-Use this to track certain user actions, like when a user enabled a certain feature, when a user tapped a button, when the user created an account, or when the user shared something. 
+Use this to track certain user actions, like when a user enabled a certain feature, when a user tapped a button, when the user created an account, or when the user shared something.
 This allows us to provide you insights into which user actions are most commonly done in which real world context.
 */
 trackUserAction("user_tapped_share_button");
 
 /*
-Use this to track certain events in your app. This can be used generically to track any type of event. For example, you can add this to your existing analytics code to log all your existing events into ContextSDK. 
+Use this to track certain events in your app. This can be used generically to track any type of event. For example, you can add this to your existing analytics code to log all your existing events into ContextSDK.
 This allows us to provide you insights into which events are most commonly triggered in which real world context.
 */
 trackEvent("custom_event");
