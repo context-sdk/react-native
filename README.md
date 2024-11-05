@@ -14,6 +14,8 @@ ContextSDK for React Native
 
 ## Overview
 
+Follow these steps to add ContextSDK to your app, and refer to the [official documentation](https://docs.decision.contextsdk.com/) for additional details and advanced configuration.
+
 - **Step 1**: Add ContextSDK to your app
 - **Step 2**: (Optional) Log any events
 - **Step 3**: Ship an App Store update with ContextSDK
