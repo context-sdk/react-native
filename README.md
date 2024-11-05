@@ -1,10 +1,10 @@
 # react-native-context-sdk
 
-![npm version](https://img.shields.io/npm/v/react-native-context-sdk)
+[![npm version](https://img.shields.io/npm/v/react-native-context-sdk)](https://www.npmjs.com/package/react-native-context-sdk)
 [![Changelog](https://img.shields.io/badge/changelog-latest-blue)](https://docs.decision.contextsdk.com/changelog/)
 [![Documentation](https://img.shields.io/badge/documentation-latest-blue)](https://docs.decision.contextsdk.com/)
-![Issues](https://img.shields.io/github/issues/context-sdk/react-native)
-![Pull Requests](https://img.shields.io/github/issues-pr/context-sdk/react-native)
+[![Issues](https://img.shields.io/github/issues/context-sdk/react-native)](https://github.com/context-sdk/react-native/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/context-sdk/react-native)](https://github.com/context-sdk/react-native/pulls)
 
 ContextSDK for React Native
 
