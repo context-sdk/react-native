@@ -1,5 +1,10 @@
 # react-native-context-sdk
 
+![npm version](https://img.shields.io/npm/v/react-native-context-sdk)
+[![Changelog](https://img.shields.io/badge/changelog-latest-blue)](https://docs.decision.contextsdk.com/changelog/)
+![Issues](https://img.shields.io/github/issues/context-sdk/react-native)
+![Pull Requests](https://img.shields.io/github/issues-pr/context-sdk/react-native)
+
 ContextSDK for React Native
 
 ## Supported Platforms
