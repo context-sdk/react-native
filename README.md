@@ -1,4 +1,4 @@
-# react-native-context-sdk
+# ContextSDK for React Native
 
 [![npm version](https://img.shields.io/npm/v/react-native-context-sdk)](https://www.npmjs.com/package/react-native-context-sdk)
 [![Changelog](https://img.shields.io/badge/changelog-latest-blue)](https://docs.decision.contextsdk.com/changelog/)
@@ -6,80 +6,96 @@
 [![Issues](https://img.shields.io/github/issues/context-sdk/react-native)](https://github.com/context-sdk/react-native/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/context-sdk/react-native)](https://github.com/context-sdk/react-native/pulls)
 
-ContextSDK for React Native
+ContextSDK is a powerful tool that brings real-world context and insights directly into your React Native app through on-device signals, empowering you to boost conversions and engagement, enhance user experiences, and reduce churn — all with privacy in mind, as no personally identifiable information (PII) is ever collected.
 
-## Supported Platforms
+Our SDK supports iOS and will soon support Android, making it easy to integrate into your cross-platform React Native projects.
 
-- iOS - 14.0 and higher
-- Android - Coming Soon
+## Getting Started
 
-## Overview
+This repository is dedicated to managing releases of ContextSDK for React Native, distributed via [npm](https://www.npmjs.com/package/react-native-context-sdk). For other platforms, such as Flutter and Swift, or alternative installation methods, please see our [official documentation](https://docs.decision.contextsdk.com/).
 
-Follow these steps to add ContextSDK to your app, and refer to the [official documentation](https://docs.decision.contextsdk.com/) for additional details and advanced configuration.
+To integrate ContextSDK into your React Native project, follow these steps:
 
-- **Step 1**: Add ContextSDK to your app
-- **Step 2**: (Optional) Log any events
-- **Step 3**: Ship an App Store update with ContextSDK
+### Installation
 
-## Installation
+1. Add `react-native-context-sdk` to your project using your preferred package manager:
 
-**Step 1:** Choose your preferred package manager:
-
-```
+```bash
 npm install react-native-context-sdk@latest
 ```
-```
+
+Or:
+
+```bash
 yarn add react-native-context-sdk
 ```
 
-**Step 2:** Ensure minimum Deployment Target
-
-ContextSDK requires a minimum deployment target of iOS 14.0, be sure to update your `ios/Podfile` to specify 14.0 or higher:
+2. Ensure the minimum deployment target for iOS is set to `14.0` or higher in your `ios/Podfile`:
 
 ```ruby
-platform :ios, '14.0'
+platform :ios, "14.0"
 ```
 
-### Activating ContextSDK
+### Setup
 
-After you installed ContextSDK, you need to add your license key. [Register here](https://insights.contextsdk.com/register) to get started. Call this on app start.
+After installing ContextSDK, initialize it with your license key at app startup. You can [sign up here](https://console.contextsdk.com/register) to receive your license key.
 
 ```js
-import { setup } from 'react-native-context-sdk';
+import { setup } from "react-native-context-sdk";
 
 void setup("YOUR_LICENSE_KEY_HERE");
 ```
 
-## Optional: Track additional Events
+## Using ContextSDK
 
-Optionally, you can log specific events to get a better understanding of how the real world context influences your app.
+### Tracking Events
+
+To maximize the value of ContextSDK, you can log various events in your app to gain insights into how real-world context influences user behavior.
+
+#### Track Page Views
+
+Track users navigating through different screens in your app:
 
 ```js
-import {
-  trackEvent,
-  trackPageView,
-  trackUserAction,
-} from 'react-native-context-sdk';
+import { trackPageView } from "react-native-context-sdk";
 
-/*
-Use this to track users navigating through different screen in your app.
-It allow us to provide you insights into which screen is most commonly used in which real world context.
-*/
 trackPageView("page_identifier");
+```
 
-/*
-Use this to track certain user actions, like when a user enabled a certain feature, when a user tapped a button, when the user created an account, or when the user shared something.
-This allows us to provide you insights into which user actions are most commonly done in which real world context.
-*/
+#### Track User Actions
+
+Track specific user actions, such as enabling features or tapping buttons:
+
+```js
+import { trackUserAction } from "react-native-context-sdk";
+
 trackUserAction("user_tapped_share_button");
+```
 
-/*
-Use this to track certain events in your app. This can be used generically to track any type of event. For example, you can add this to your existing analytics code to log all your existing events into ContextSDK.
-This allows us to provide you insights into which events are most commonly triggered in which real world context.
-*/
+#### Track Custom Events
+
+Log any custom events generically to get insights into their real-world context:
+
+```js
+import { trackEvent } from "react-native-context-sdk";
+
 trackEvent("custom_event");
 ```
 
-## Go Live
+### Going Live
 
-Now all that's left is to ship your update to the App Store to start gaining context insights. Continue to the [release page](https://docs.insights.contextsdk.com/release/) for a final check before shipping, as well as other deployment tips.
+Once integrated, you're ready to ship your app update to the App Store and start leveraging real-world context insights.  Continue to the [release page](https://docs.insights.contextsdk.com/release/) for a final check before shipping, as well as other deployment tips.
+
+## Documentation
+
+For detailed setup instructions, usage examples, and advanced usage scenarios, visit our [official documentation](https://docs.decision.contextsdk.com/).
+
+## Not using ContextSDK yet?
+
+If you’re interested in adding real-world context insights to your app, you can [sign up here](https://console.contextsdk.com/register) to receive your license key and access. For more information about how ContextSDK can enhance your app’s user experience, visit our [website](https://contextsdk.com) or reach out to our team at support@contextsdk.com.
+
+## Support
+
+For any questions or technical support, please don’t hesitate to reach out to our team — we’re eager to help!
+
+Thank you for choosing ContextSDK! 🚀 We’re excited to support you in building context-aware experiences for your users.
