@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.homepage     = package["homepage"]
   s.authors      = package["author"]
   s.platforms    = { :ios => '14.0' }
-  s.source       = { :git => "https://github.com/context-sdk/react-native", :tag => s.version }
+  s.source       = { :git => "https://github.com/context-sdk/react-native", :tag => s.version.to_s }
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 
   # A map used to map the React Native version to the compatible Context SDK version, only when the these versions are not the same.
@@ -19,8 +19,10 @@ Pod::Spec.new do |s|
     "4.7.3" => "4.7.0",
     "4.7.4" => "4.7.0",
     "4.7.5" => "4.7.1",
+    "4.8.1-alpha.1" => "4.8.0",
+    "4.8.1-alpha.2" => "4.8.0",
   }
-  mapped_version = version_mapping[s.version] || s.version
+  mapped_version = version_mapping[s.version.to_s] || s.version.to_s
   s.dependency("ContextSDK", mapped_version)
 
   # Use install_modules_dependencies helper to install the dependencies if React Native version >=0.71.0.
