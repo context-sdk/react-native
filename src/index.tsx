@@ -1,5 +1,7 @@
 import { NativeModules, Platform } from 'react-native';
 import { Context } from './context';
+export { Outcome, Context } from './context';
+export type { OutcomeMetadata } from './context';
 
 const LINKING_ERROR =
   `The package 'react-native-context-sdk' doesn't seem to be linked. Make sure: \n\n` +
