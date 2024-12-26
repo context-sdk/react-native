@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
     "4.7.3" => "4.7.0",
     "4.7.4" => "4.7.0",
     "4.7.5" => "4.7.1",
+    "4.8.0+1" => "4.8.0",
   }
   mapped_version = version_mapping[s.version] || s.version
   s.dependency("ContextSDK", mapped_version)
