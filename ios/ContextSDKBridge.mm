@@ -26,7 +26,7 @@ RCT_EXTERN_METHOD(trackUserAction:(NSString*)userActionName
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
 RCT_EXTERN_METHOD(calibrate:(NSString*)flowName
-                  maxDelay:(int)maxDelay
+                  maxDelay:(nonnull NSNumber*)maxDelay
                   customSignals:(NSDictionary*)customSignals
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
@@ -38,40 +38,40 @@ RCT_EXTERN_METHOD(optimize:(NSString*)flowName
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
 RCT_EXTERN_METHOD(fetchContext:(NSString*)flowName
-                  duration:(int)duration
+                  duration:(nonnull NSNumber*)duration
                   customSignals:(NSDictionary*)customSignals
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
 RCT_EXTERN_METHOD(instantContext:(NSString*)flowName
-                  duration:(int)duration
+                  duration:(nonnull NSNumber*)duration
                   customSignals:(NSDictionary*)customSignals
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(releaseContext:(int)contextID
+RCT_EXTERN_METHOD(releaseContext:(nonnull NSNumber*)contextID
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(context_shouldUpsell:(int)contextID
+RCT_EXTERN_METHOD(context_shouldUpsell:(nonnull NSNumber*)contextID
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(context_validate:(int)contextID
+RCT_EXTERN_METHOD(context_validate:(nonnull NSNumber*)contextID
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(context_log:(int)contextID
-                  outcome:(int)outcome
+RCT_EXTERN_METHOD(context_log:(nonnull NSNumber*)contextID
+                  outcome:(nonnull NSNumber*)outcome
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(context_logIfNotLoggedYet:(int)contextID
-                  outcome:(int)outcome
+RCT_EXTERN_METHOD(context_logIfNotLoggedYet:(nonnull NSNumber*)contextID
+                  outcome:(nonnull NSNumber*)outcome
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(context_appendOutcomeMetadata:(int)contextID
+RCT_EXTERN_METHOD(context_appendOutcomeMetadata:(nonnull NSNumber*)contextID
                   values:(NSDictionary*)values
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)

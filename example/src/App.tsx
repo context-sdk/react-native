@@ -84,7 +84,11 @@ export default function App() {
                 test_key_bool: false,
                 fake_bool: 15,
               });
+              // Log a few outcomes
               await context.log(Outcome.positive);
+              await context.log(Outcome.positiveConverted);
+              await context.log(Outcome.negative);
+              await context.log(Outcome.negativeNotInteracted);
             },
             customSignals: {
               test_key_string: 'test_value_2',
