@@ -4,9 +4,12 @@ import ContextSDK
 class ContextSDKBridge: NSObject {
 
     @objc(setup:withResolver:withRejecter:)
-    func setup(licenseKey: String, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-        let result = contextSDK_setupContextManagerWithAPIBackend_rn(licenseKey)
-        resolve(result)
+    func setup(licenseKey: String, resolve: @escaping RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
+        // This needs to be called on the main thread.
+        DispatchQueue.main.async {
+          let result = contextSDK_setupContextManagerWithAPIBackend_rn(licenseKey)
+          resolve(result)
+        }
     }
 
     @objc(setGlobalCustomSignals:withResolver:withRejecter:)
