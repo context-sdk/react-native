@@ -56,9 +56,9 @@ class ContextSDKBridge: NSObject {
     }
 
     @objc(calibrate:maxDelay:customSignals:withResolver:withRejecter:)
-    func calibrate(flowName: String, maxDelay: Int, customSignals: NSDictionary, resolve: @escaping RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
+    func calibrate(flowName: String, maxDelay: NSNumber, customSignals: NSDictionary, resolve: @escaping RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         let customSignalsID = createCustomSignals(customSignals: customSignals)
-        contextSDK_calibrate_rn(flowName: flowName, customSignalsID: customSignalsID, maxDelay: Int32(maxDelay)) { contextID in
+      contextSDK_calibrate_rn(flowName: flowName, customSignalsID: customSignalsID, maxDelay: maxDelay.int32Value) { contextID in
             resolve(contextID)
         }
     }
@@ -74,63 +74,63 @@ class ContextSDKBridge: NSObject {
     }
 
     @objc(fetchContext:duration:customSignals:withResolver:withRejecter:)
-    func fetchContext(flowName: String, duration: Int, customSignals: NSDictionary, resolve: @escaping RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
+    func fetchContext(flowName: String, duration: NSNumber, customSignals: NSDictionary, resolve: @escaping RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         let customSignalsID = createCustomSignals(customSignals: customSignals)
-        contextSDK_fetchContext_rn(flowName: flowName, customSignalsID: customSignalsID, duration: Int32(duration)) { contextID in
+      contextSDK_fetchContext_rn(flowName: flowName, customSignalsID: customSignalsID, duration: duration.int32Value) { contextID in
             resolve(contextID)
         }
     }
 
     @objc(instantContext:duration:customSignals:withResolver:withRejecter:)
-    func instantContext(flowName: String, duration: Int, customSignals: NSDictionary, resolve: @escaping RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
+    func instantContext(flowName: String, duration: NSNumber, customSignals: NSDictionary, resolve: @escaping RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         let customSignalsID = createCustomSignals(customSignals: customSignals)
-        let contextID = contextSDK_instantContext(flowNameC: flowName, customSignalsID: customSignalsID, duration: Int32(duration))
+      let contextID = contextSDK_instantContext(flowNameC: flowName, customSignalsID: customSignalsID, duration: duration.int32Value)
         contextSDK_releaseCustomSignals(contextID: customSignalsID)
         resolve(contextID)
     }
 
     @objc(releaseContext:withResolver:withRejecter:)
-    func releaseContext(contextID: Int,resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) {
-        contextSDK_releaseContext(contextID: Int32(contextID))
+    func releaseContext(contextID: NSNumber, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) {
+      contextSDK_releaseContext(contextID: contextID.int32Value)
         resolve(true)
     }
 
     @objc(context_shouldUpsell:withResolver:withRejecter:)
-    func context_shouldUpsell(contextID: Int, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) {
-        let shouldUpsell = contextSDK_context_shouldUpsell(contextID: Int32(contextID))
+    func context_shouldUpsell(contextID: NSNumber, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) {
+      let shouldUpsell = contextSDK_context_shouldUpsell(contextID: contextID.int32Value)
         resolve(shouldUpsell)
     }
 
     @objc(context_validate:withResolver:withRejecter:)
-    func context_validate(contextID: Int, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) {
-        let output = String(cString: contextSDK_context_validate(contextID: Int32(contextID)))
+    func context_validate(contextID: NSNumber, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) {
+      let output = String(cString: contextSDK_context_validate(contextID: contextID.int32Value))
         resolve(output)
     }
 
     @objc(context_log:outcome:withResolver:withRejecter:)
-    func context_log(contextID: Int, outcome: Int, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) {
-        contextSDK_context_log(Int32(contextID), Int32(outcome))
+    func context_log(contextID: NSNumber, outcome: NSNumber, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) {
+      contextSDK_context_log(contextID.int32Value, outcome.int32Value)
         resolve(true)
     }
 
     @objc(context_logIfNotLoggedYet:outcome:withResolver:withRejecter:)
-    func context_logIfNotLoggedYet(contextID: Int, outcome: Int, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) {
-        contextSDK_context_logIfNotLoggedYet(Int32(contextID), Int32(outcome))
+    func context_logIfNotLoggedYet(contextID: NSNumber, outcome: NSNumber, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) {
+      contextSDK_context_logIfNotLoggedYet(contextID.int32Value, outcome.int32Value)
         resolve(true)
     }
 
     @objc(context_appendOutcomeMetadata:values:withResolver:withRejecter:)
-    func context_appendOutcomeMetadata(contextID: Int, values: NSDictionary, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) {
+    func context_appendOutcomeMetadata(contextID: NSNumber, values: NSDictionary, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) {
         for (key, value) in values {
             guard let stringKey = key as? String else  { continue }
             if let intValue = value as? Int {
-                contextSDK_context_appendOutcomeMetadataInt(contextID: Int32(contextID), idC: stringKey, value: Int32(intValue))
+              contextSDK_context_appendOutcomeMetadataInt(contextID: contextID.int32Value, idC: stringKey, value: Int32(intValue))
             } else if let doubleValue = value as? Double {
-                contextSDK_context_appendOutcomeMetadataFloat(contextID: Int32(contextID), idC: stringKey, value: Float(doubleValue))
+                contextSDK_context_appendOutcomeMetadataFloat(contextID: contextID.int32Value, idC: stringKey, value: Float(doubleValue))
             } else if let stringValue = value as? String {
-                contextSDK_context_appendOutcomeMetadataString(contextID: Int32(contextID), idC: stringKey, valueC: stringValue)
+                contextSDK_context_appendOutcomeMetadataString(contextID: contextID.int32Value, idC: stringKey, valueC: stringValue)
             } else if let boolValue = value as? Bool { // TODO: Bools fall into the Int clause - we should fix this
-                contextSDK_context_appendOutcomeMetadataBool(contextID: Int32(contextID), idC: stringKey, value: boolValue)
+                contextSDK_context_appendOutcomeMetadataBool(contextID: contextID.int32Value, idC: stringKey, value: boolValue)
             }
         }
         resolve(true)

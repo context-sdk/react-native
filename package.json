@@ -1,6 +1,6 @@
 {
   "name": "react-native-context-sdk",
-  "version": "5.2.1",
+  "version": "5.2.2",
   "description": "ContextSDK for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
