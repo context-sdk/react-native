@@ -73,11 +73,14 @@
   "resolutions": {
     "@types/react": "^18.2.44",
     "on-headers": "1.1.0",
-    "brace-expansion": "2.0.2",
-    "tmp": "0.2.4",
+    "brace-expansion": "2.0.3",
+    "tmp": "0.2.6",
     "glob": "10.5.0",
     "js-yaml": "^4.1.1",
-    "lodash": "4.17.23"
+    "lodash": "4.18.0",
+    "picomatch@^4.0.3": "4.0.4",
+    "minimatch@^9.0.4": "9.0.7",
+    "socks": "2.8.9"
   },
   "peerDependencies": {
     "react": "*",
